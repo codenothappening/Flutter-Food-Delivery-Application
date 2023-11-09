@@ -162,7 +162,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                                     BigText(
                                         text: recommendedProduct
                                             .recommendedProductList[index]
-                                            .name),
+                                            .name!),
                                     SizedBox(
                                       height: Dimensions.height10,
                                     ),
