@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_application/Pages/Cart/cart_page.dart';
 import 'package:food_delivery_application/Pages/Home/main_food_page.dart';
 import 'package:food_delivery_application/controllers/popular_product_controller.dart';
 import 'package:food_delivery_application/controllers/recommended_product_controller.dart';
@@ -22,9 +23,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: MainFoodPage(),
-      initialRoute: RouteHelper.initial,
-      getPages: RouteHelper.routes,
+      home: CartPage(),
+      // initialRoute: RouteHelper.initial,
+      // getPages: RouteHelper.routes,
     );
   }
 }
