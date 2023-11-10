@@ -64,13 +64,13 @@ class RecommendedFoodDetail extends StatelessWidget {
                             : Container(),
                         Get.find<PopularProductController>().totalItems >= 1
                             ? Positioned(
-                                right: 6,
+                                right: 5,
                                 top: 3,
                                 child: BigText(
                                   text: Get.find<PopularProductController>()
                                       .totalItems
                                       .toString(),
-                                  size: 14,
+                                  size: 11,
                                   color: Colors.white,
                                 ),
                               )
