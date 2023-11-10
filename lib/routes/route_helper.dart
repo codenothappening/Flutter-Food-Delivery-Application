@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_application/Pages/Cart/cart_page.dart';
 import 'package:food_delivery_application/Pages/Food/popular_food_detail.dart';
 import 'package:food_delivery_application/Pages/Food/recommended_food_detail.dart';
+import 'package:food_delivery_application/Pages/Home/home_page.dart';
 import 'package:food_delivery_application/Pages/Home/main_food_page.dart';
 import 'package:get/get.dart';
 
@@ -13,12 +14,12 @@ class RouteHelper {
   static String getInitial() => "$initial";
   static String getPopularFood(int pageId, String page) =>
       '$popularFood?pageId=$pageId&page=$page';
-  static String getRecommendedFood(int pageId) =>
-      '$recommendedFood?pageId= $pageId';
+  static String getRecommendedFood(int pageId, String page) =>
+      '$recommendedFood?pageId= $pageId&page=$page';
 
   static String getCartPage() => '$cartPage';
   static List<GetPage> routes = [
-    GetPage(name: initial, page: () => MainFoodPage()),
+    GetPage(name: initial, page: () => HomePage()),
     GetPage(
       name: popularFood,
       page: () {
@@ -32,7 +33,8 @@ class RouteHelper {
       name: recommendedFood,
       page: () {
         var pageId = Get.parameters['pageId'];
-        return RecommendedFoodDetail(pageId: int.parse(pageId!));
+        var page = Get.parameters['page'];
+        return RecommendedFoodDetail(pageId: int.parse(pageId!), page: page);
       },
       transition: Transition.fadeIn,
     ),
